@@ -5,7 +5,7 @@ export type Genre = {
 
 export type Genres = Genre[];
 
-export const genres = [
+export const genres: Genres = [
 	{ id: 0, name: 'Action' },
 	{ id: 1, name: 'Adventrues' },
 	{ id: 2, name: 'Comedy' },

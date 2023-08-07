@@ -54,13 +54,15 @@
 		const { seat, isFree, isBooked } = seatItem;
 
 		if (!isBooked && isFree) {
-			selectedSeats.value.push({ row, seat });
 			seatItem.isBooked = true;
+			selectedSeats.value.push({ row, seat });
 		}
 
 		if (isBooked) {
-			selectedSeats.value.splice(row - 1, 1);
 			seatItem.isBooked = false;
+			selectedSeats.value = selectedSeats.value.filter(
+				(s) => s.row !== selectedSeat.row && s.seat !== selectedSeat.seat
+			);
 		}
 	}
 
